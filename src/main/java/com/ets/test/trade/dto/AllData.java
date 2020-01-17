@@ -10,6 +10,7 @@ import lombok.Data;
 @Data
 public class AllData {
 
+
     private String legal_person_code = "200116841036";
     private String function = "etsapi/trade";
     private String version = "V1.0.0";
