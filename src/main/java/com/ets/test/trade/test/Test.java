@@ -40,6 +40,7 @@ public class Test implements CommandLineRunner {
     @Autowired
     TrCustCardMapper trCustCardMapper;
 
+
     @Override
     public void run(String... args) throws Exception {
 
