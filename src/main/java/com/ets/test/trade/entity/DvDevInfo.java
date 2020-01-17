@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Table(name = "DV_DEV_INFO")
 public class DvDevInfo implements Serializable {
+
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "select seq_dv_dev_info.nextval from dual")
