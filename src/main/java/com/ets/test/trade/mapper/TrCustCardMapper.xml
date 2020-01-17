@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ets.test.trade.mapper.TrCustCardMapper">
+  <resultMap id="BaseResultMap" type="com.ets.test.trade.entity.TrCustCard">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="LEGAL_PERSON_CODE" jdbcType="VARCHAR" property="legalPersonCode" />
+    <result column="CARD_NO" jdbcType="VARCHAR" property="cardNo" />
+    <result column="CUST_CODE" jdbcType="VARCHAR" property="custCode" />
+    <result column="CARD_INDEX" jdbcType="DECIMAL" property="cardIndex" />
+    <result column="CARD_SN" jdbcType="DECIMAL" property="cardSn" />
+    <result column="CARD_STATUS" jdbcType="DECIMAL" property="cardStatus" />
+    <result column="CARD_TYPE" jdbcType="DECIMAL" property="cardType" />
+    <result column="VER" jdbcType="DECIMAL" property="ver" />
+    <result column="BEGIN_TIME" jdbcType="DATE" property="beginTime" />
+    <result column="END_TIME" jdbcType="DATE" property="endTime" />
+    <result column="LIMIT_DAY" jdbcType="DECIMAL" property="limitDay" />
+    <result column="LIMIT_MEAL" jdbcType="DECIMAL" property="limitMeal" />
+    <result column="LIMIT_OUT_LINE" jdbcType="DECIMAL" property="limitOutLine" />
+    <result column="CREATE_TIME" jdbcType="DATE" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+    <result column="OP_ID" jdbcType="DECIMAL" property="opId" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+
+
+  <select id="getOneCardInfo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+
+    select * from tr_cust_card where id = #{id}
+
+  </select>
+
+
+  <select id="selectCardList" resultMap="BaseResultMap">
+    select * from tr_cust_card where LEGAL_PERSON_CODE = '200116841036'
+  </select>
+
+
+</mapper>

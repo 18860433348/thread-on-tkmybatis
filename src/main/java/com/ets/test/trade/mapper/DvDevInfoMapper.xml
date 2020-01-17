@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ets.test.trade.mapper.DvDevInfoMapper">
+  <resultMap id="BaseResultMap" type="com.ets.test.trade.entity.DvDevInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="LEGAL_PERSON_CODE" jdbcType="VARCHAR" property="legalPersonCode" />
+    <result column="DEV_TYPE_ID" jdbcType="DECIMAL" property="devTypeId" />
+    <result column="MAIN_KEY" jdbcType="VARCHAR" property="mainKey" />
+    <result column="DEV_SN" jdbcType="VARCHAR" property="devSn" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="STATION_ID" jdbcType="DECIMAL" property="stationId" />
+    <result column="MAC" jdbcType="DECIMAL" property="mac" />
+    <result column="DEV_DEPT_ID" jdbcType="DECIMAL" property="devDeptId" />
+    <result column="ACC_CODE" jdbcType="DECIMAL" property="accCode" />
+    <result column="ACC_DES" jdbcType="VARCHAR" property="accDes" />
+    <result column="MCH_NO" jdbcType="VARCHAR" property="mchNo" />
+    <result column="MCH_KEY" jdbcType="VARCHAR" property="mchKey" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
+    <result column="APP_NAME" jdbcType="VARCHAR" property="appName" />
+    <result column="APP_VER" jdbcType="DECIMAL" property="appVer" />
+    <result column="CREATE_TIME" jdbcType="DATE" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+    <result column="OP_ID" jdbcType="DECIMAL" property="opId" />
+    <result column="PARAM_GROUP_ID" jdbcType="DECIMAL" property="paramGroupId" />
+    <result column="PARAM_GROUP_VER" jdbcType="DECIMAL" property="paramGroupVer" />
+  </resultMap>
+
+  <select id="selectOneDev" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+
+    select * from dv_dev_info where id = #{id}
+
+  </select>
+
+
+  <select id="selectDevList" resultMap="BaseResultMap">
+    select * from dv_dev_info where LEGAL_PERSON_CODE = '200116841036' and DEV_TYPE_ID = 1
+  </select>
+
+</mapper>
